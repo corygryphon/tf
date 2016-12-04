@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Concept 1</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body ng-app="tf_concepts" ng-controller="mainControl" style="color:#333;">
+
+<section id="concept1">
+    <div class="container">
+        <h1 class="text-info">Concept 1</h1>
+        <p>In a web programming language​ of your choice, <br>provide code and tests for a method which multiplies a value by 321, <br>without using loops, the multiply operator, or divide operator.</p>
+        <h3 class="text-primary">Response:</h3>
+        <form class="form-inline" >
+            <div class="form-group">
+                <label for="numCalc">321 * </label>
+                <input type="number" class="form-control" ng-model="number" id="numCalc" placeholder="2" value="0">
+                <label> is <span class="alert-success font-lg"><strong>{{ result() }}</strong></span></label>
+            </div><br>
+        </form>
+
+    </div>
+</section>
+<section id="concept2">
+    <div class="container">
+        <h1 class="text-info">Concept 2</h1>
+        <p>Based on the following schema tables, using SQL, select all contacts in the table and their <br>address information. Omit any records that do not have an address.​ Show the output of your <br>queries as returned from the SQL statement.</p>
+        <h3 class="text-primary">Response:</h3>
+        <p class="bg-success">SELECT *
+            FROM Customer_Addresses AS CA
+            LEFT JOIN Customers AS C
+            ON CA.CUSTOMER_ID=C.ID WHERE CA.STREET_ADDRESS IS NOT NULL;</p>
+        <p class="bg-success">
+            +----+-------------+------------------------+-------------+---------+------+----------+<br>
+            | ID | CUSTOMER_ID | STREET_ADDRESS         | POSTAL_CODE | COUNTRY | ID   | NAME     |<br>
+            +----+-------------+------------------------+-------------+---------+------+----------+<br>
+            |  3 |           1 | 999 Night Stalker Road |       12345 | US      |    1 | Ryan     |<br>
+            |  1 |           2 | 123 Big Walk Way       |       75023 | US      |    2 | Jonathan |<br>
+            |  2 |           3 | 509 Charter Road       |       90021 | US      |    3 | Colin    |<br>
+            +----+-------------+------------------------+-------------+---------+------+----------+<br>
+            3 rows in set (0.00 sec)
+        </p>
+    </div>
+</section>
+<section id="concept3">
+    <div class="container">
+        <h1 class="text-info">Concept 3</h1>
+        <p>Based on the table information in Question 2, write a REST based javascript service (any <br>framework of your choice) which interfaces with these tables. Write any associated <br>unit tests necessary.</p>
+        <h3 class="text-primary">Response:</h3>
+        <p class="bg-success">Example user read from localhost:8001/api/readCustomers?cid=2</p>
+        <p class="bg-success"><iframe src="http://0.0.0.0:8001/api/readCustomer?cid=3" style="width:100%; height:30px;"></iframe></p>
+
+    </div>
+</section>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>-->
+
+<script type="text/javascript" src="concepts.js"></script>
+</body>
+</html>
